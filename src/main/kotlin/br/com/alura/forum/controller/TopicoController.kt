@@ -1,5 +1,6 @@
 package br.com.alura.forum.controller
 
+import br.com.alura.forum.dto.NovoTopicoDTO
 import br.com.alura.forum.model.Topico
 import br.com.alura.forum.service.TopicoService
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,5 +21,5 @@ class TopicoController(private val service: TopicoService) {
     fun buscarPorId(@PathVariable id: Long): Topico = service.buscarPorId(id)
 
     @PostMapping
-    fun cadastrar(@RequestBody topico: Topico) = service.cadastrar(topico)
+    fun cadastrar(@RequestBody topico: NovoTopicoDTO) = service.cadastrar(dto)
 }
