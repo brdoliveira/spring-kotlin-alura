@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/topicos")
@@ -21,5 +22,5 @@ class TopicoController(private val service: TopicoService) {
     fun buscarPorId(@PathVariable id: Long): TopicoView = service.buscarPorId(id)
 
     @PostMapping
-    fun cadastrar(@RequestBody dto: NovoTopicoForm) = service.cadastrar(dto)
+    fun cadastrar(@RequestBody @Valid dto: NovoTopicoForm) = service.cadastrar(dto)
 }
