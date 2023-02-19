@@ -3,7 +3,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/forum
     username: admin
-    password: root
+    password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     properties:
